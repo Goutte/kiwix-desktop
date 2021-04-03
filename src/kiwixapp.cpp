@@ -299,6 +299,9 @@ void KiwixApp::createAction()
     CREATE_ACTION(OpenHomePageAction, gt("home-page"));
     SET_SHORTCUT(OpenHomePageAction, QKeySequence(Qt::ALT + Qt::Key_Home));
 
+    CREATE_ACTION(HistoryBackAction, gt("back"));
+    SET_SHORTCUT(HistoryBackAction, QKeySequence(Qt::ALT + Qt::Key_Left));
+
     CREATE_ACTION_ICON(PrintAction, "print", gt("print"));
     SET_SHORTCUT(PrintAction, QKeySequence::Print);
     connect(mpa_actions[PrintAction], &QAction::triggered,

@@ -14,6 +14,7 @@ TopWidget::TopWidget(QWidget *parent) :
     mp_historyBackAction->setIcon(QIcon(":/icons/back.svg"));
     mp_historyBackAction->setText(gt("back"));
     mp_historyBackAction->setToolTip(gt("back"));
+    mp_historyBackAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_Left));
     mp_historyBackAction->setEnabled(false);
     connect(mp_historyBackAction, &QAction::triggered, [](){
         KiwixApp::instance()->getTabWidget()->triggerWebPageAction(QWebEnginePage::Back);
@@ -24,6 +25,7 @@ TopWidget::TopWidget(QWidget *parent) :
     mp_historyForwardAction->setIcon(QIcon(":/icons/forward.svg"));
     mp_historyForwardAction->setText(gt("forward"));
     mp_historyForwardAction->setToolTip(gt("forward"));
+    mp_historyForwardAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_Right));
     mp_historyForwardAction->setEnabled(false);
     connect(mp_historyForwardAction, &QAction::triggered, [](){
         KiwixApp::instance()->getTabWidget()->triggerWebPageAction(QWebEnginePage::Forward);
